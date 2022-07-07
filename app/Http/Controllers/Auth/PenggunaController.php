@@ -166,7 +166,8 @@ class PenggunaController extends CoreController
             'offset' =>$request->input('offset', 0)
         ];            
         $table = $this->_namaTabel->getTable();
+       
         
-        return parent::list($table,$data);
+        return parent::listData($table,$data);
     }    
 }

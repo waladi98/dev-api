@@ -17,6 +17,9 @@ $router->group(
         );
     }
 );
+
+/* Routing untuk modul pengguna*/
+/* M : auth*/
 $router->group(
     [
         'namespace' => 'Auth',
@@ -31,6 +34,18 @@ $router->group(
         $router->post(
             'login','PenggunaController@login'
         );
+    }
+);
+/* Routing untuk modul pengguna*/
+/* M : user*/
+$router->group(
+    [
+        'namespace' => 'Auth',
+        'prefix' => 'pengguna',
+        'middleware' => 'user'
+    ],
+    function() use($router)
+    {
         $router->addRoute(
             ['GET','POST'],
             'list','PenggunaController@getData'

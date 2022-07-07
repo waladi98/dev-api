@@ -78,6 +78,7 @@ $app->middleware([
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'user' => App\Http\Middleware\UserMiddleware::class,
 ]);
 
 /*
@@ -111,6 +112,8 @@ $app->router->group([
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
     require __DIR__.'/../routes/auth.php';
+    require __DIR__.'/../routes/core.php';
+    require __DIR__.'/../routes/file.php';
 });
 
 return $app;

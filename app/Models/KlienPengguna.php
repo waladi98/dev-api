@@ -20,6 +20,7 @@ class KlienPengguna extends Model implements AuthenticatableContract, Authorizab
      */
     protected $table = 'ws_sys_klien_pengguna';
     protected $primaryKey = 'kode';
+    protected $keyType    = 'string';
     const UPDATED_AT = null;
     const CREATED_AT = null;
     protected $fillable = [
